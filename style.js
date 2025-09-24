@@ -21,7 +21,6 @@ function renderTickets(tickets) {
          <td class="py-2 px-4"> ${ticket.lastName}</td>
           <td class="py-2 px-4"> ${ticket.email}</td>
            <td class="py-2 px-4"> ${ticket.ticketCount}</td>
-            <td class="py-2 px-4"> ${ticket.action}</td>
             
              <td class="py-2 px-4 space-x-2">
 
@@ -58,3 +57,17 @@ async function addTicket(e) {
 
 ticketForm.addEventListener("submit", addTicket);
 fetchTickets();
+
+
+// making the delete button work
+async function deleteTicket(id) {
+    await fetch(`${API_URL}/ ${id}`, {
+        method: "Delete",
+
+
+
+    })
+    fetchTickets();
+    
+    
+} 
