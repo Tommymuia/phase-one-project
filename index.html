@@ -14,28 +14,78 @@
     </nav>
 
     <main class="flex-grow container mx-auto px-6">
-        <form id="ticketForm" class="bg-white shadow-md rounded p-6 w-full mx-w-lg mb-8">
-            <h2 class="text-xl font-semibold mb-4">Add Ticket</h2>
+      <form
+        id="ticketForm"
+        class="bg-white shadow-md rounded p-6 w-full mx-w-lg mb-8"
+      >
+        <h2 class="text-xl font-semibold mb-4">Add Ticket</h2>
 
-            <div class="grid grid-cols-2 gap-4 mb-4">
-                <input  type="text" placeholder="firstName" required class="border p-3 rounded w-full" id="firstName">
-                <input  type="text" placeholder="lastName" required class="border p-3 rounded w-full" id="lastName">
-            </div>
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <input
+            type="text"
+            placeholder="firstName"
+            required
+            class="border p-3 rounded w-full"
+            id="firstName"
+          />
+          <input
+            type="text"
+            placeholder="lastName"
+            required
+            class="border p-3 rounded w-full"
+            id="lastName"
+          />
+        </div>
 
-            <div class="mb-4">
-                <input type="email" placeholder="Enter your Email" id="email" required class="border p-3 rounded w-full">
+        <div class="mb-4">
+          <input
+            type="email"
+            placeholder="Enter your Email"
+            id="email"
+            required
+            class="border p-3 rounded w-full"
+          />
+        </div>
+        <div class="mb-4">
+          <input
+            type="number"
+            placeholder="Number of Tickets"
+            id="ticketCount"
+            required
+            min="1"
+            class="border p-2 rounded w-full"
+          />
+        </div>
+        <button
+          type="submit"
+          class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        >
+          ADD TICKET
+        </button>
+        
+      </form>
 
-            </div>
-            <div class="mb-4">
-                <input type="number" placeholder="Number of Tickets" id="ticketCount" required min="1" class="border p-2 rounded w-full">
-            </div>
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">ADD TICKET</button>
+      <input type="text" placeholder="Search By Name or Email..." id="searchBox" class="mb-6 p-2 border rounded w-full max-w-lg">
 
-        </form>
+      <div class="overflow-x-auto w-full max-w-4xl">
+        <table class="min-w-full bg-white border border-black">
+            <thead>
+                <tr class="bg-gray-100 border border-b">
+                    <th class="py-2 px-4 text-left">first Name</th>
+                    <th class="py-2 px-4 text-left">last Name</th>
+                    <th class="py-2 px-4 text-left">Email</th>
+                    <th class="py-2 px-4 text-left">Number of Tickets</th>
+                    <th class="py-2 px-4 text-left">Actions</th>
+                    
 
+                </tr>
+                <tbody id="ticketsTable"></tbody>
+            </thead>
+
+        </table>
+
+      </div>
     </main>
-
-    
 
     <script src="style.js"></script>
   </body>
