@@ -32,7 +32,7 @@ function renderTickets(tickets) {
 
              `;
 
-     ticketsTable.appendChild(row)
+    ticketsTable.appendChild(row);
   });
 }
 // adding tickets to the UI
@@ -58,16 +58,3 @@ async function addTicket(e) {
 ticketForm.addEventListener("submit", addTicket);
 fetchTickets();
 
-
-// making the delete button work
-async function deleteTicket(id) {
-    await fetch(`${API_URL}/ ${id}`, {
-        method: "Delete",
-
-
-
-    })
-    fetchTickets();
-    
-    
-} 
