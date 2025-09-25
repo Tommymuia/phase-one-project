@@ -24,8 +24,8 @@ function renderTickets(tickets) {
             
              <td class="py-2 px-4 space-x-2">
 
-             <button onclick="editTicket(${ticket.id})" class="bg-green-400 text-white px-2 py-1 rounded "> Edit</button>
-             <button onclick="deleteTicket(${ticket.id})" class="bg-red-400 text-white px-2 py-1 rounded"> Delete</button>
+             <button onclick="editTicket('${ticket.id}')" class="bg-green-400 text-white px-2 py-1 rounded "> Edit</button>
+             <button onclick="deleteTicket('${ticket.id}')" class="bg-red-400 text-white px-2 py-1 rounded"> Delete</button>
              
              
              </td>
@@ -57,4 +57,31 @@ async function addTicket(e) {
 
 ticketForm.addEventListener("submit", addTicket);
 fetchTickets();
+
+async function deleteTicket(id) {
+    const confirmed = confirm("Seriously, are you sure you want to delete the ticket?");
+    if(!confirmed){
+        return;
+    } 
+    //deleting the ticket from the server
+
+try{
+    const res = await fetch(`${API_URL}/${id}`, {
+        method: "DELETE",
+
+    })
+    if(res.ok){
+        fetchTickets();
+    }else{
+        console.error("Failed to delete tickets:", res.status, res.statusText);
+        alert("error: Could not delete ticket");
+    }
+    
+}catch (error) {
+    console.error("Error during delete operation:", error);
+    alert("Network error: Could not reach the server.");
+  }
+}
+
+
 

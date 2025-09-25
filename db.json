@@ -1,25 +1,3 @@
 {
-  "tickets": [
-    {
-      "id": "46b3",
-      "firstName": "Thomas",
-      "lastName": "Muia",
-      "email": "muiathomas.mt@gmail.com",
-      "ticketCount": 5
-    },
-    {
-      "id": "4a50",
-      "firstName": "Thomas",
-      "lastName": "Muia",
-      "email": "muiathomas.mt@gmail.com",
-      "ticketCount": 1
-    },
-    {
-      "id": "41fd",
-      "firstName": "Thomas",
-      "lastName": "Muia",
-      "email": "muiathomas.mt@gmail.com",
-      "ticketCount": 1
-    }
-  ]
+  "tickets": []
 }
