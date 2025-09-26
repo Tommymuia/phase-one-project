@@ -112,3 +112,4 @@ async function editTicket(id){
     submitButton.classList.remove("bg-blue-500", "hover:bg-blue-600");
     submitButton.classList.add("bg-green-500", "hover:bg-green-600");
 }
+
